@@ -3,10 +3,13 @@ package com.simplilearn.zumba;
 import java.util.ArrayList;
 import java.util.List;
 
+interface Myinterface {
+	void sendMessage() ;
 
+}
 	
  
-public class Batch {
+public class Batch implements Myinterface {
 	
  Participant p = new Participant();
 	
@@ -15,15 +18,21 @@ public class Batch {
 	
 	public void morning () {
 		
-		System.out.println("Participant added to Morning batch");
-		
+		System.out.println("Participant added to Morning batch" + morningBatch);
+		sendMessage();
 	}
 		
 	public void evening() {
 		System.out.println("Participant added to Evening batch" + eveningBatch);
-		
+		sendMessage();
 			
 		}
+
+	@Override
+	public void sendMessage() {
+		
+		System.out.println("The Batch has started");
+	}
 	
 }	
 
